@@ -1,5 +1,5 @@
 # quotienten-pyrometry bei spektrumr
-# 6.6.2020
+# 7.6.2020
 
 rm(list = ls())
 
@@ -174,7 +174,7 @@ source(file="quotienten-pyrometry bei spektrum - includes.r") # Definition of fu
 # 
 # # **********************************************************************
 # 
-# # Möglichkeiten zum Verbessern
+# # M?glichkeiten zum Verbessern
 # 
 # L = expression(2*h*c^2/lambda^5*1/(exp(h*c/(lambda*k*T))-1));
 # deriv(L_, "lambda");
