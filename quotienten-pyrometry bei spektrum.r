@@ -175,7 +175,7 @@ source(file="quotienten-pyrometry bei spektrum - includes.r") # Definition of fu
 # 
 # # **********************************************************************
 # 
-# # M?glichkeiten zum Verbessern
+# # Moeglichkeiten zum Verbessern
 # 
 # L = expression(2*h*c^2/lambda^5*1/(exp(h*c/(lambda*k*T))-1));
 # deriv(L_, "lambda");
@@ -190,8 +190,6 @@ source(file="quotienten-pyrometry bei spektrum - includes.r") # Definition of fu
 # mode(dx2x)
 # eval(dx2x)
 # dx2x.gradient
-# x
-# x <- -1:2
 # 
 # L = "2*h*c^2/lambda^5*1/(exp(h*c/(lambda*k*T))-1)"
 # fx = Deriv(L, "lambda")
