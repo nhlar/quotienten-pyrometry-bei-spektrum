@@ -1,6 +1,6 @@
 # quotienten-pyrometry bei spektrum
 # 7.6.2020
-# by rs
+# rs
 
 rm(list = ls())
 
