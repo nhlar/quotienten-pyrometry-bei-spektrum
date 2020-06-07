@@ -1,4 +1,4 @@
-# quotienten-pyrometry bei spektrumr
+# quotienten-pyrometry bei spektrum
 # 7.6.2020
 
 rm(list = ls())
