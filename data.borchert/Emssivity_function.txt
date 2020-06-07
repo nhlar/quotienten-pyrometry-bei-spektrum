@@ -1,0 +1,6 @@
+ 
+emissivity[wl,T) = eps_b0 - wl * (eps_b1 + eps_b2*a[1]);
+
+eps_b0=0.5296, 
+eps_b1=5.9531e-6, 
+eps_b2=3.7677e-9
