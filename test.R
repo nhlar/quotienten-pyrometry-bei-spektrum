@@ -1,3 +1,6 @@
+# test
+# 7.6.2020
+
 a1 <- function(a,c) {
   print(a)
   pars <- as.list(match.call()[-1])
@@ -14,3 +17,4 @@ formals(a1)$a
 formals(a1)$a =3
 formalArgs(a1)
 formalArgs(args(a1))
+
