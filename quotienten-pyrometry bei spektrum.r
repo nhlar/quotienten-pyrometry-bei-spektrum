@@ -1,5 +1,5 @@
 # quotienten-pyrometry bei spektrum
-# 7.6.2020
+#12.6.2020
 # by rs
 
 rm(list = ls())
@@ -69,12 +69,21 @@ source(file="quotienten-pyrometry bei spektrum - includes.r") # Definition of fu
 #------------------------
 # make artifical data
 
+approx_func_cobs <- function(in_data,lambda_range){
+  data_func = approxfun(in_data, rule=2)
+  data_func = cobs(lambda_range,data_func(lambda_range),lambda=10000)
+  data_func = approxfun(predict(data_func,lambda_range))
+}
+
   if (!real_curve) {
     lambda_range=seq(200,3000,1)
-    calib_emiss_func = approxfun(c(300,600,10000),c(0.8,0.5,0.2), rule=2)
-    calib_emiss_func = cobs(lambda_range,calib_emiss_func(lambda_range),lambda=10000)
-    calib_emiss_func = approxfun(predict(calib_emiss_func,lambda_range))
-    # plot(calib_emiss_func(lambda_range), type="l")
+    calib_emiss = list(x=c(300,600,10000),y=c(0.8,0.5,0.2))
+    calib_emiss_fun = approx_func_cobs(calib_emiss,lambda_range)
+    # calib_emiss_func = approxfun(calib_emiss, rule = 2)
+    # calib_emiss_func = cobs(lambda_range, calib_emiss_func(lambda_range), lambda =
+    #                           10000)
+    # calib_emiss_func = approxfun(predict(calib_emiss_func,lambda_range))
+    plot(calib_emiss_func(lambda_range), type="l")
 
     calib_knots = list(x=c(100,300,500,1000,3500), y=c(1e-5,1e-5,1e-3,1e-5,1e-13))
     calib_sensibility_func = approxfun(calib_knots$x, calib_knots$y, rule=2)
