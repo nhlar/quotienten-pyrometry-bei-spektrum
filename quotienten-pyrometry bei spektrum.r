@@ -86,9 +86,10 @@ approx_func_cobs <- function(in_data,lambda_range){
     plot(calib_emiss_func(lambda_range), type="l")
 
     calib_knots = list(x=c(100,300,500,1000,3500), y=c(1e-5,1e-5,1e-3,1e-5,1e-13))
-    calib_sensibility_func = approxfun(calib_knots$x, calib_knots$y, rule=2)
-    calib_sensibility_func = cobs(lambda_range,calib_sensibility_func(lambda_range),lambda=0, degree=2)
-    calib_sensibility_func = approxfun(predict(calib_sensibility_func,lambda_range))
+    calib_sensibility_func = approx_func_cobs(calib_knots,lambda_range)
+    # calib_sensibility_func = approxfun(calib_knots$x, calib_knots$y, rule=2)
+    # calib_sensibility_func = cobs(lambda_range,calib_sensibility_func(lambda_range),lambda=0, degree=2)
+    # calib_sensibility_func = approxfun(predict(calib_sensibility_func,lambda_range))
     plot(calib_sensibility_func(lambda_range), type="l")
     
     spec_data = spec_data_make(lambda_range, plot=TRUE, eps=calib_emiss_func, sensibility=calib_sensibility_func, T=T_cal, noise=noise)
