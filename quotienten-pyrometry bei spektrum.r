@@ -155,6 +155,28 @@ approx_func_cobs <- function(in_data,lambda_range){
   T_res
   plot(T_res, type = "l")
 
+  sapply(spec_ratio, function(X) {
+    print("a")
+    print(X)
+  })
+  
+  replicate(2,spec_ratio, function(X) {
+    print("a")
+    print(X)
+  })
+  
+  # # folgendes geht nicht, bb wird nur einmal als ganzes verwertet
+  # T_find2 <- function(value, bb_vals) {
+  #   print(value)
+  #   print(bb_vals)
+  #   T = approx(bb_vals$bb_ratio,bb_vals$T, value)$y
+  # }
+  # 
+  # T_res2 = mutate(spec_ratio, T=T_find2(ratio, filter(bb$ratio[near(bb$ratio$lambda, lambda, tol = 2000*.Machine$double.eps),]) ) )
+  # 
+  # aa =  bb$ratio[near(bb$ratio$lambda, 740.88, tol = 2000*.Machine$double.eps),]
+                  
+  
 # group_map(bb_group_lambda, ~min(.x$T))
 # 
 # # -----------------------------
