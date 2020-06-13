@@ -1,5 +1,5 @@
 # quotienten-pyrometry bei spektrum
-#12.6.2020
+# 12.6.2020
 # by rs
 
 rm(list = ls())
@@ -9,7 +9,7 @@ setwd(path)
 
 # Parameters
 real_curve = FALSE
-real_curve = TRUE
+# real_curve = TRUE
 data_file = "data.borchert/Metall_2s_1kW_nStelle_2_400.dat"
 calib_messung_file = "data.borchert/B12A_Messung.txt"
 calib_factor_file = "data.borchert/B12Aacalw.txt"
